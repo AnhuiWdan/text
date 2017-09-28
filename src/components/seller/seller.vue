@@ -1,16 +1,13 @@
 <template>
-  <div class="children">
-    {{message}}
+  <div class="seller">
+    I am seller
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  export default {
-    props: [
-      'message'
-    ]
-  }
+  export default {}
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+
 </style>

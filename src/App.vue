@@ -1,42 +1,43 @@
 <template>
   <div id="app">
-    <transition :items="items"></transition>
-    <child :items="items"></child>
+    <v-header></v-header>
+    <ul class="tab-list">
+      <li>
+        <router-link to="/goods">商品</router-link>
+      </li>
+      <li>
+        <router-link to="/seller">商家</router-link>
+      </li>
+      <li>
+        <router-link to="/ratings">评价</router-link>
+      </li>
+    </ul>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import Transition from '@/components/transition'
-  import Child from '@/components/child'
+  import header from 'components/header/header'
 
   export default {
-    data () {
-      return {
-        items: [
-          {
-            name: 'tom',
-            age: 12
-          },
-          {
-            name: 'johny',
-            age: 15
-          },
-          {
-            name: 'steven',
-            age: 22
-          }
-        ]
-      }
-    },
-    methods: {
-    },
     components: {
-      Transition,
-      Child
+      'v-header': header
     }
   }
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-
+  #app
+    .tab-list
+      display flex
+      width 100%
+      height 40px
+      line-height: 40px
+      color #333
+      li
+        flex: 1
+        text-align center
+        &>.active
+          color: #f23456
 </style>
