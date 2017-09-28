@@ -27,7 +27,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "components/common/mixin.styl"
+  @import "common/stylus/mixin.styl"
 
   #app
     .tab
