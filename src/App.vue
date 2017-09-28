@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
     <ul class="tab-list">
       <li>
         <router-link to="/goods">商品</router-link>
@@ -20,7 +20,21 @@
 <script type="text/ecmascript-6">
   import header from 'components/header/header'
 
+  const ERRNO = 0
+
   export default {
+    data () {
+      return {
+        seller: Object
+      }
+    },
+    mounted () {
+      this.$http.get('api/seller').then(response => {
+        if (response.data.errno === ERRNO) {
+          this.seller = response.data.data
+        }
+      })
+    },
     components: {
       'v-header': header
     }
@@ -34,10 +48,13 @@
       width 100%
       height 40px
       line-height: 40px
-      color #333
+      color rgb(77, 85, 93)
+      font-size 14px
       li
         flex: 1
         text-align center
-        &>.active
-          color: #f23456
+        a
+          display block
+        & > .active
+          color rgb(240, 20, 20)
 </style>

@@ -1,11 +1,19 @@
 <template>
   <div class="header">
-    I am header
+    <div class="avatar">
+      <img :src="seller.avatar" alt="">
+    </div>
+    <div class="content">
+      <h1 class="title">{{seller.name}}</h1>
+      <p>{{seller.description}}</p>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  export default {}
+  export default {
+    props: ['seller']
+  }
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
