@@ -42,6 +42,8 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "common/stylus/mixin"
+
   #app
     .tab-list
       display flex
@@ -50,6 +52,7 @@
       line-height: 40px
       color rgb(77, 85, 93)
       font-size 14px
+      border-1px(rgba(7, 17, 27, 0.1))
       li
         flex: 1
         text-align center
