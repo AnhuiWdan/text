@@ -6,6 +6,7 @@
     <div class="content">
       <h1 class="title">{{seller.name}}</h1>
       <p>{{seller.description}}</p>
+      <p>{{seller.supports[0].description}}</p>
     </div>
   </div>
 </template>

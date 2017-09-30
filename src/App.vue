@@ -2,17 +2,16 @@
   <div id="app">
     <v-header :seller="seller"></v-header>
     <ul class="tab-list">
-      <li>
+      <li class="list-items">
         <router-link to="/goods">商品</router-link>
       </li>
-      <li>
+      <li class="list-items">
         <router-link to="/seller">商家</router-link>
       </li>
-      <li>
+      <li class="list-items">
         <router-link to="/ratings">评价</router-link>
       </li>
     </ul>
-
     <router-view></router-view>
   </div>
 </template>
@@ -23,12 +22,13 @@
   const ERRNO = 0
 
   export default {
-    data () {
+    data() {
       return {
-        seller: Object
+        seller: Object,
+        api: null
       }
     },
-    mounted () {
+    mounted() {
       this.$http.get('api/seller').then(response => {
         if (response.data.errno === ERRNO) {
           this.seller = response.data.data
@@ -53,7 +53,7 @@
       color rgb(77, 85, 93)
       font-size 14px
       border-1px(rgba(7, 17, 27, 0.1))
-      li
+      .list-items
         flex: 1
         text-align center
         a
